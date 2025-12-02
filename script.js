@@ -3,25 +3,27 @@ document.addEventListener('DOMContentLoaded', function() {
     const estadoDiv = document.getElementById('mensajeEstado');
 
     function manejarClick() {
-        if (boton.classList.contains('btn-primary')) {
-            boton.textContent = '¡Gracias por hacer click!';
-            boton.classList.remove('btn-primary');
-            boton.classList.add('btn-success');
-            
+
+        if (boton.classList.contains('btn-warning')) {
+            boton.textContent = '¡Gracias! Contactaremos contigo.';
+            boton.classList.remove('btn-warning');
+            boton.classList.add('btn-primary'); 
+
             estadoDiv.style.display = 'block';
-            estadoDiv.textContent = '¡Has interactuado correctamente con el botón!';
-            estadoDiv.classList.remove('alert-info');
-            estadoDiv.classList.add('alert-success');
+            estadoDiv.textContent = '¡Evento click registrado con éxito!';
+            estadoDiv.classList.remove('alert-success');
+            estadoDiv.classList.add('alert-info'); 
+            estadoDiv.style.color = 'black';
 
         } else {
-            boton.textContent = 'Haz Click Aquí de Nuevo';
-            boton.classList.remove('btn-success');
-            boton.classList.add('btn-primary');
+            boton.textContent = '¡Empieza Ahora!';
+            boton.classList.remove('btn-primary');
+            boton.classList.add('btn-warning');
 
             estadoDiv.style.display = 'none';
             estadoDiv.textContent = '';
-            estadoDiv.classList.remove('alert-success');
-            estadoDiv.classList.add('alert-info');
+            estadoDiv.classList.remove('alert-info');
+            estadoDiv.classList.add('alert-success');
         }
     }
 
